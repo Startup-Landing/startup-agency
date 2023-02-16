@@ -1,7 +1,54 @@
+import Link from 'next/link'
+import Image from 'next/image'
+
+const links = [
+  {
+    title: 'Home',
+    path: '#home'
+  },
+  {
+    title: 'Work',
+    path: '#work'
+  },
+  {
+    title: 'Why us',
+    path: '#why-us'
+  },
+  {
+    title: 'Team',
+    path: '#team'
+  },
+  {
+    title: 'Contact',
+    path: '#contact'
+  }
+]
+
 export default function Header () {
   return (
-    <nav>
+    <header className='w-full shadow-md py-3'>
+      <nav className='w-full md:w-10/12 mx-auto flex justify-between items-center px-2 py-1 '>
+        <div className='flex items-center justify-center gap-2'>
+          <Image src='/logo.jpg' className='w-14 h-14' width={64} height={64} alt='Starting Media Logo' />
+          <h3 className='text-xl font-semibold'>Starting Media</h3>
+        </div>
 
-    </nav>
+        <ul className='hidden md:flex items-center justify-center gap-4'>
+          {links.map((link, index) => (
+            <li key={`nav-link-desktop-${index}`}>
+              <a href={link.path}>{link.title}</a>
+            </li>
+          ))}
+        </ul>
+
+        <Link href='/get-started' className='hidden md:inline-flex font-semibold text-purple-500'>
+          Get Started
+        </Link>
+
+        <div className='md:hidden'>
+          Menu
+        </div>
+      </nav>
+    </header>
   )
 }
