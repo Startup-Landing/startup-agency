@@ -26,11 +26,11 @@ const links = [
 
 export default function Header () {
   return (
-    <header className='w-full shadow-md py-3'>
-      <nav className='w-full md:w-10/12 mx-auto flex justify-between items-center px-2 py-1 '>
+    <header className='w-full shadow-sm py-2'>
+      <nav className='w-full md:w-10/12 mx-auto flex justify-between items-center px-4'>
         <div className='flex items-center justify-center gap-2'>
-          <Image src='/logo.jpg' className='w-14 h-14' width={64} height={64} alt='Starting Media Logo' />
-          <h3 className='text-xl font-semibold'>Starting Media</h3>
+          <Image src='/logo.jpg' className='w-10 h-10' width={64} height={64} alt='Starting Media Logo' />
+          <h3 className='font-medium'>Starting Media</h3>
         </div>
 
         <ul className='hidden md:flex items-center justify-center gap-4'>
